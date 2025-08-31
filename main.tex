@@ -1,0 +1,275 @@
+%---- Required Packages and Functions ----
+
+\documentclass[fontset=none,a4paper,11pt]{ctexart}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{unicode-math}
+\usepackage{orcidlink}
+
+% --- 中文字体配置 ---
+% 注意 FallBack 的 Back 是大写的
+\setCJKmainfont{FangZhengShuSong-GBK-1}[BoldFont={SourceHanSerifCN-Bold}, ItalicFont=FangZhengKaiTi-GBK-1, FallBack=SimSun-ExtG, Path=fonts/]
+\setCJKsansfont{FangZhengHeiTi-GBK-1}[BoldFont={SourceHanSansCN-Medium}, FallBack=SimSun-ExtG, Path=fonts/]
+\setCJKmonofont{FangZhengFangSong-GBK-1}[FallBack=SimSun-ExtG, Path=fonts/]
+
+% --- 英文字体与数学字体配置 ---
+\setmainfont{XITS}
+\setmathfont{XITS Math}
+
+\setlength{\footskip}{4.08003pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=1cm, right=1.4cm, bottom=1cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\tiny\itshape}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{一个光头} % Your Name
+\newcommand{\course}{软件工程 (中外合办)} % Your Program
+\newcommand{\college}{智能学院} % Your College
+\newcommand{\roll}{2022112002XX} % Your Stu No.
+\newcommand{\phone}{18812344321} % Your Phone Number
+\newcommand{\emaila}{chenyejin2004@stumail.ysu.edu.cn} %Email 1
+
+% URL definitions
+\newcommand{\githuburl}{https://github.com/255doesnotexist}
+\newcommand{\hfurl}{https://huggingface.co/255doesnotexist}
+\newcommand{\orcid}{0009\string-\string-0009\string-\string-0315\string-\string-3145}
+\newcommand{\orcidurl}{https://orcid.org/\orcid}
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+
+
+\parbox{2.6cm}{%
+\includegraphics[width=2.35cm,clip]{logos/ysu_logo.png}
+}
+\parbox{\dimexpr\linewidth-5.5cm\relax}{
+\begin{tabularx}{\linewidth}{L r} \\
+  \textbf{\Large \name} & {\raisebox{0.0\height}{\footnotesize \faPhone}\ +86\string-\string-\phone}\\
+  {学号：\roll} & \href{mailto:\emaila}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ {\emaila}}\\
+  {燕山大学} &  \raisebox{0.0\height}{\footnotesize \faGithub}\ \href{\githuburl}{GitHub}\hypertarget{back:github}{}\hyperlink{github}{\textcolor{blue}{$^1$}} / \href{\hfurl}{hf}\hypertarget{back:hf}{}\hyperlink{hf}{\textcolor{blue}{$^2$}}\\
+  {\course } & \orcidlink{\orcid}{\href{\orcidurl}{\orcid}}\hypertarget{back:orcid}{}\hyperlink{orcid}{\textcolor{blue}{$^3$}}
+\end{tabularx}
+\hspace{5mm}
+}
+\parbox{2.6cm}{%
+\includegraphics[width=2.0cm,clip]{photo/1cun.png}
+}
+
+
+
+
+
+
+
+%-----------EDUCATION-----------
+\section{\textbf{教育背景}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {燕山大学}{综合均分：4.15 | 综合排名：6/75 }
+      {学位名称与专业方向}{2022 级}
+    \resumeSubheading
+      {英语水平与专业课程}{}
+      {CET-4: xxx分, CET-6: xxx分 | 专业课1: xxx分, 专业课2: xxx分}{}
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+%
+
+
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{实习经历}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {公司名称}{城市}
+      {职位名称}{日期}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+        \item {工作描述第一行}
+      \resumeItemListEnd
+    \vspace{-3.0mm}
+      
+  \resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+
+
+%-----------PROJECTS-----------------
+\section{\textbf{个人项目}}
+\resumeSubHeadingListStart
+    \resumeProject
+      {项目名称} %Project Name
+      {项目描述（您在项目中的贡献）} %Project Name, Location Name
+      {项目日期} %Event Dates
+
+    \resumeItemListStart
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-13.5mm}
+
+
+
+%-----------Technical skills-----------------
+\section{\textbf{技术技能}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {编程语言}{}
+      {Python, Java, C++, JavaScript, SQL}{}
+    \resumeSubheading
+      {技术栈}{}
+      {框架/工具1, 框架/工具2, 数据库/云服务}{}
+    \resumeSubheading
+      {学术研究}{}
+      {研究方向1, 研究方向2, 研究兴趣}{}
+  \resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+
+
+
+
+
+
+
+%-----------Achievements-----------------
+\section{\textbf{获奖情况}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumePOR{获奖名称 } % Award
+    {奖项描述} % Event
+    {获奖时间} %Event Year
+    
+\resumePOR{获奖名称 } % Award
+    {奖项描述} % Event
+    {获奖时间} %Event Year
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+
+
+%-------------------------------------------
+
+% Bidirectional link targets
+\vspace{5mm}
+\hrule
+\begin{center}
+{\footnotesize
+\hypertarget{github}{\href{\githuburl}{$^1$ \githuburl}}\quad
+\hypertarget{hf}{\href{\hfurl}{$^2$ \hfurl}}\quad
+\hypertarget{orcid}{\href{\orcidurl}{$^3$ \orcidurl}}
+}
+\end{center}
+
+\end{document}

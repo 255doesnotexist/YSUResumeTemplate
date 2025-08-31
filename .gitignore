@@ -1,0 +1,31 @@
+# LaTeX temporary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.xdv
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Editor files
+.marscode/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Do NOT ignore these:
+# fonts/ - font files are essential
+# logos/ - logo images
+# photo/ - photos
+# main.tex - main document
+# main.pdf - generated PDF
+# README.md - documentation
+# LICENSE - license file
